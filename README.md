@@ -18,7 +18,7 @@
 
 2. 点击下方链接直接安装脚本：
 
-   **[点击安装 Devin 汉化脚本](../../raw/main/devin-chinese.user.js)**
+   **[点击安装 Devin 汉化脚本](https://update.greasyfork.org/scripts/584203/Devin%20%E7%BD%91%E9%A1%B5%E7%AB%AF%E6%B1%89%E5%8C%96.user.js)**
 
    或者手动安装：打开 Tampermonkey 面板 → 添加新脚本 → 粘贴 `devin-chinese.user.js` 的内容 → 保存。
 
@@ -73,13 +73,6 @@ const REGEX_RULES = [
 └── README.md
 ```
 
-## 发布渠道
-
-| 平台 | 链接 |
-|------|------|
-| Greasy Fork（油猴） | *即将发布* |
-| Chrome Web Store | *即将发布* |
-| Edge Add-ons | *即将发布* |
 
 ## 注意事项
 
