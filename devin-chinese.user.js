@@ -1,16 +1,16 @@
 // ==UserScript==
 // @name         Devin 网页端汉化
-// @namespace    https://github.com/Fangpidifferentiate/Devin-Web-Chinese
+// @namespace    https://github.com/KawaYiLab/Devin-Web-Chinese
 // @version      1.0.0
 // @description  将 Devin (app.devin.ai) 网页界面全面汉化为中文，基于静态词典映射 + 正则规则
-// @author       FangpiDifferentiate
+// @author       KawaYiLab
 // @match        https://app.devin.ai/*
 // @match        https://*.devin.ai/*
 // @grant        none
 // @run-at       document-idle
 // @license      MIT
-// @homepageURL  https://github.com/Fangpidifferentiate/Devin-Web-Chinese
-// @supportURL   https://github.com/Fangpidifferentiate/Devin-Web-Chinese/issues
+// @homepageURL  https://github.com/KawaYiLab/Devin-Web-Chinese
+// @supportURL   https://github.com/KawaYiLab/Devin-Web-Chinese/issues
 // ==/UserScript==
 
 (function () {
