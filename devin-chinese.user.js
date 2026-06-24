@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Devin 网页端汉化
 // @namespace    https://github.com/KawaYiLab/Devin-Web-Chinese
-// @version      1.0.3
+// @version      1.0.4
 // @description  将 Devin (app.devin.ai) 网页界面全面汉化为中文，基于静态词典映射 + 正则规则
 // @author       KawaYiLab
 // @match        https://app.devin.ai/*
@@ -713,6 +713,7 @@ const DICTIONARY = {
   "Follow display language": "跟随显示语言",
   "Only triggered manually": "仅手动触发",
   "On PR creation only": "仅在创建 PR 时",
+  "Only triggered when a PR is first created": "仅在首次创建 PR 时触发",
   "Auto review": "自动审查",
   "Triggered on PR creation and new commits": "在创建 PR 和有新提交时触发",
 

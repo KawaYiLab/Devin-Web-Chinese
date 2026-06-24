@@ -707,6 +707,7 @@ const DICTIONARY = {
   "Follow display language": "跟随显示语言",
   "Only triggered manually": "仅手动触发",
   "On PR creation only": "仅在创建 PR 时",
+  "Only triggered when a PR is first created": "仅在首次创建 PR 时触发",
   "Auto review": "自动审查",
   "Triggered on PR creation and new commits": "在创建 PR 和有新提交时触发",
 
