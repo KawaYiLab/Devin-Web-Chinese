@@ -266,6 +266,7 @@ const DICTIONARY = {
 
   // ========== 仓库页面 ========== 
   "Add repository": "添加仓库", 
+  "Search for a repository": "搜索仓库...", 
   "Connected repositories": "已连接仓库", 
   "Repository name": "仓库名称", 
   "Last synced": "上次同步", 
@@ -939,6 +940,8 @@ const DICTIONARY = {
   "Tuned for smaller, well-defined tasks. 60% cheaper": "适用于规模较小、目标明确的任务，成本比标准版低 60%。", 
   "OpenAI's most capable model": "OpenAI 最强大的模型", 
   "Good at instruction following": "擅长遵循指令", 
+  "Capability": "能力", 
+  "Higher capability means more powerful models but higher costs": "能力越高，模型越强大，但成本也越高。", 
 
   // ========== 加号弹窗 ========== 
   "Add files, repos, macros": "添加文件、仓库、宏", 
@@ -949,6 +952,8 @@ const DICTIONARY = {
   "Devin Sessions": "Devin 会话", 
   "Mention other Devin sessions": "引用其他 Devin 会话", 
   "Macros from Knowledge": "来自知识库的宏", 
+  "Upload attachment": "上传附件", 
+  "Codebase files": "代码库文件", 
 
   // ========== 三个点弹窗 ========== 
   "Manage MCP connectors": "管理 MCP 连接器", 
@@ -958,6 +963,9 @@ const DICTIONARY = {
   "Record voice prompt": "录制语音提示", 
   "Use Imperative Environment": "使用命令式环境", 
   "Legacy": "旧版", 
+  "More options": "更多设置", 
+  "Virtual environment": "虚拟环境", 
+  "Notable repositories": "仓库", 
 
   // ========== 侧边栏三点菜单 ========== 
   "Created time": "创建时间", 
@@ -979,6 +987,7 @@ const DICTIONARY = {
   "Devin went to sleep": "Devin 进入休眠", 
   "Send a message to resume": "发送消息以继续工作", 
   "Wake up to see live": "唤醒以查看实时状态", 
+  "High server load. Devin is waiting for capacity...": "服务器负载较高，Devin 正在等待可用资源……", 
   "Live": "实时", 
   "Executed": "已执行", 
   "Thinking": "思考中", 
@@ -1196,7 +1205,26 @@ const DICTIONARY = {
 
   // ========== Devin API 页面 ========== 
   "API keys": "API 密钥", 
+  "Organization ID": "组织 ID", 
+  "Service users": "服务用户", 
+  "API keys (legacy)": "API密钥（旧版）", 
+  "Search for a service user": "搜索服务用户", 
+  "All roles": "所有角色", 
+  "Provision service user": "配置服务角色", 
+  "No service users yet": "目前还没有服务用户", 
+  "Provision a service user to see them listed here.": "设置服务用户以查看此处的列表。", 
+  "Role name": "角色名称", 
+  "Provision": "创建", 
+  "organization": "组织级", 
+  "service user": "服务用户", 
+  "Create an organization-level service user. The service user will need to be assigned appropriate roles within the selected organization.": "创建一个组织级服务用户，并为其分配所选组织内的相应角色。", 
   "Create API key": "创建 API 密钥", 
+  "Display name": "显示名称", 
+  "Organization role": "组织角色", 
+  "Expiration": "有效期", 
+  "Please enter a display name to continue": "请输入显示名称以继续", 
+  "Please select a role to continue": "请选择一个角色以继续", 
+  "Enter display name ": "输入名称", 
   "No API keys": "暂无 API 密钥", 
   "Generate a new API key": "生成新的 API 密钥", 
   "Never used": "从未使用", 

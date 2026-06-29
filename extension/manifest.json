@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Devin 网页端汉化",
-  "version": "1.0.0",
+  "version": "1.0.6",
   "description": "基于静态文本映射的 Devin 网页端汉化插件，将 app.devin.ai 界面文案翻译为中文。",
   "content_scripts": [
     {
