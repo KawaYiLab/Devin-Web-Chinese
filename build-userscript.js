@@ -11,7 +11,7 @@ const path = require('path');
 const HEADER = `// ==UserScript==
 // @name         Devin 网页端汉化
 // @namespace    https://github.com/KawaYiLab/Devin-Web-Chinese
-// @version      1.0.0
+// @version      1.0.7
 // @description  将 Devin (app.devin.ai) 网页界面全面汉化为中文，基于静态词典映射 + 正则规则
 // @author       KawaYiLab
 // @match        https://app.devin.ai/*

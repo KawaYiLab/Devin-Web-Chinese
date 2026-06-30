@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Devin 网页端汉化
 // @namespace    https://github.com/KawaYiLab/Devin-Web-Chinese
-// @version      1.0.6
+// @version      1.0.7
 // @description  将 Devin (app.devin.ai) 网页界面全面汉化为中文，基于静态词典映射 + 正则规则
 // @author       KawaYiLab
 // @match        https://app.devin.ai/*
@@ -960,6 +960,10 @@ const DICTIONARY = {
   "Good at instruction following": "擅长遵循指令", 
   "Capability": "能力", 
   "Higher capability means more powerful models but higher costs": "能力越高，模型越强大，但成本也越高。", 
+  "Introducing Devin Fusion": "向您介绍 Devin Fusion", 
+  "A frontier model and a fast sidekick, working as one — top quality, lower cost.": "顶尖模型与快速模型协同运行——带来顶级质量，并大幅降低成本。", 
+  "Try now": "立即体验", 
+  "Best balance of capability, speed, and cost": "质量、速度与成本的最佳选择。", 
 
   // ========== 加号弹窗 ========== 
   "Add files, repos, macros": "添加文件、仓库、宏", 
