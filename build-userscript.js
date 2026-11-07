@@ -1,48 +1,44 @@
-/**
- * 构建油猴脚本
- * 将 extension/dictionary.js 和 extension/content.js 合并为单文件 devin-chinese.user.js
- *
- * 用法: node build-userscript.js
- */
+/** 合并完整源码，保留各自作用域；无需猜测 IIFE 的行号或换行格式。 */
+const fs = require("node:fs");
+const path = require("node:path");
+const { Script } = require("node:vm");
+const manifest = require("./extension/manifest.json");
 
-const fs = require('fs');
-const path = require('path');
+function buildUserscript() {
+  const header = [
+    "// ==UserScript==",
+    "// @name         Devin 网页端汉化",
+    "// @namespace    https://github.com/KawaYiLab/Devin-Web-Chinese",
+    "// @version      " + manifest.version,
+    "// @description  " + manifest.description,
+    "// @author       KawaYiLab",
+    ...manifest.content_scripts[0].matches.map((match) => "// @match        " + match),
+    "// @grant        none",
+    "// @run-at       document-idle",
+    "// @noframes",
+    "// @license      MIT",
+    "// @homepageURL  https://github.com/KawaYiLab/Devin-Web-Chinese",
+    "// @supportURL   https://github.com/KawaYiLab/Devin-Web-Chinese/issues",
+    "// ==/UserScript==",
+  ].join("\n");
+  const sources = manifest.content_scripts[0].js.map((file) =>
+    fs.readFileSync(path.join(__dirname, "extension", file), "utf8").replace(/\r\n?/g, "\n").trimEnd());
+  const output = header + '\n\n(function () {\n  "use strict";\n\n' + sources.join("\n\n") + "\n})();\n";
+  new Script(output, { filename: "devin-chinese.user.js" });
+  return output;
+}
 
-const HEADER = `// ==UserScript==
-// @name         Devin 网页端汉化
-// @namespace    https://github.com/KawaYiLab/Devin-Web-Chinese
-// @version      1.0.7
-// @description  将 Devin (app.devin.ai) 网页界面全面汉化为中文，基于静态词典映射 + 正则规则
-// @author       KawaYiLab
-// @match        https://app.devin.ai/*
-// @match        https://*.devin.ai/*
-// @grant        none
-// @run-at       document-idle
-// @license      MIT
-// @homepageURL  https://github.com/KawaYiLab/Devin-Web-Chinese
-// @supportURL   https://github.com/KawaYiLab/Devin-Web-Chinese/issues
-// ==/UserScript==
-
-`;
-
-const dict = fs.readFileSync(path.join(__dirname, 'extension/dictionary.js'), 'utf8');
-const content = fs.readFileSync(path.join(__dirname, 'extension/content.js'), 'utf8');
-
-// Remove comment headers from dictionary
-const dictBody = dict
-  .replace(/^\/\*\*[\s\S]*?\*\/\n\n/, '')
-  .replace('// eslint-disable-next-line no-unused-vars\n', '')
-  .replace('// eslint-disable-next-line no-unused-vars\n', '');
-
-// Extract content.js inner logic (remove IIFE wrapper and "use strict")
-const contentLines = content.split('\n');
-// Find the IIFE closing line `})();` and exclude it and everything after
-const iifeCloseIdx = contentLines.lastIndexOf('})();');
-// Start at index 13 (after: 0-9 comment, 10 IIFE open, 11 "use strict", 12 blank)
-const innerLogic = contentLines.slice(13, iifeCloseIdx).join('\n');
-
-// Assemble
-const userscript = HEADER + '(function () {\n  "use strict";\n\n' + dictBody + '\n' + innerLogic + '\n})();\n';
-
-fs.writeFileSync(path.join(__dirname, 'devin-chinese.user.js'), userscript);
-console.log('Built devin-chinese.user.js (' + userscript.split('\n').length + ' lines)');
+if (require.main === module) {
+  const destination = path.join(__dirname, "devin-chinese.user.js");
+  const output = buildUserscript();
+  if (process.argv.includes("--check")) {
+    if (!fs.existsSync(destination) || fs.readFileSync(destination, "utf8").replace(/\r\n?/g, "\n") !== output) {
+      console.error("油猴脚本与源码不同步，请运行 npm run build。");
+      process.exitCode = 1;
+    } else console.log("油猴脚本与扩展源码一致。");
+  } else {
+    fs.writeFileSync(destination, output);
+    console.log("已构建 devin-chinese.user.js (" + manifest.version + ")");
+  }
+}
+module.exports = { buildUserscript };
